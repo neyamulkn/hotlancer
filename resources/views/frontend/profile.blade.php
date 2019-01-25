@@ -9,17 +9,17 @@
 	<link rel="stylesheet" href="{{asset('/allscript')}}/css/c.css">
 	<style type="text/css">
 		
-		.exeheader{
-			background: #fff;
-border-top: 1px solid #ccc;
-margin: 0px auto;
-    margin-bottom: 0px;
-width: 97.5%;
-margin-bottom: -5px;
-padding: 10px;
-font-weight: bolder;
-box-shadow: 0 0 13px #ccc;
-		}
+	.exeheader{
+		background: #fff;
+		border-top: 1px solid #ccc;
+		margin: 0px auto;
+		    margin-bottom: 0px;
+		width: 97.5%;
+		margin-bottom: -5px;
+		padding: 10px;
+		font-weight: bolder;
+		box-shadow: 0 0 13px #ccc;
+	}
 	</style>
 @endsection
 <!-- MAIN MENU -->
