@@ -164,3 +164,7 @@ textarea{
 .active{
 	border-bottom: 6px solid #00d7b3;
 }
+
+p, ul{
+	margin: 0px;
+}

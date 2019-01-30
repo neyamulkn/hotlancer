@@ -30,8 +30,6 @@
 
 <!-- jQuery -->
 <script src="{{asset('/allscript')}}/js/vendor/jquery-3.1.0.min.js"></script>
-<!-- XM Pie Chart -->
-<script src="{{asset('/allscript')}}/js/vendor/jquery.xmpiechart.min.js"></script>
 <!-- Side Menu -->
 <script src="{{asset('/allscript')}}/js/side-menu.js"></script>
 

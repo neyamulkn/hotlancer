@@ -7,9 +7,10 @@
 	<link rel="stylesheet" href="{{asset('/allscript')}}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('/allscript')}}/css/vendor/simple-line-icons.css">
     <link rel="stylesheet" href="{{asset('/allscript')}}/css/select2.min.css">
+
+	@yield('css')
 	<link rel="stylesheet" href="{{asset('/allscript')}}/css/style.css">
 	<link rel="stylesheet" href="{{asset('/allscript')}}/css/custom.css">
-	@yield('css')
 	<!-- favicon -->
 	<link rel="icon" href="favicon.ico">
 	<title>Account Setting</title>
@@ -40,7 +41,7 @@
 				<!-- /USER AVATAR -->
 
 				<!-- USER INFORMATION -->
-				<p class="user-name">{{$user->name}}</p>
+				<p class="user-name">neyamul</p>
 				<p class="user-money">$745.00</p>
 				<!-- /USER INFORMATION -->
 			</div>
@@ -51,11 +52,9 @@
 		<!-- SIDE MENU TITLE -->
 		<p class="side-menu-title">Your Account</p>
 		<!-- /SIDE MENU TITLE -->
-
-		<!-- DROPDOWN -->
 		<ul class="dropdown dark hover-effect interactive">
 			<!-- DROPDOWN ITEM -->
-			<li class="dropdown-item active">
+			<li class="dropdown-item">
 				<a href="dashboard-settings.html">
                     <span class="sl-icon icon-settings"></span>
                     Account Settings
@@ -73,13 +72,24 @@
                 <span class="pin soft-edged big primary">49</span>
                 <!-- /PIN -->
 			</li>
+			<li class="dropdown-item">
+				<a href="dashboard-inbox.html">
+                    <span class="sl-icon icon-envelope"></span>
+                    Messages
+                </a>
+                <!-- PIN -->
+                <span class="pin soft-edged big secondary">!</span>
+                <!-- /PIN -->
+			</li>
+			
+			<p class="side-menu-title">Seller Manage Items</p>
 			<!-- /DROPDOWN ITEM -->
 
 			<!-- DROPDOWN ITEM -->
 			<li class="dropdown-item interactive">
 				<a href="#">
-                    <span class="sl-icon icon-envelope"></span>
-                    Messages
+                    <span class="sl-icon icon-tag"></span>
+                    GIG Manage
                     <!-- SVG ARROW -->
 					<svg class="svg-arrow">
 						<use xlink:href="#svg-arrow"></use>
@@ -91,7 +101,7 @@
 				<ul class="inner-dropdown">
 					<!-- INNER DROPDOWN ITEM -->
 					<li class="inner-dropdown-item">
-						<a href="dashboard-inbox.html">Your Inbox (36)</a>
+						<a href="dashboard-gig.html">All GIG Items</a>
 						<!-- PIN -->
 						<span class="pin soft-edged secondary">2</span>
 						<!-- /PIN -->
@@ -100,30 +110,46 @@
 
 					<!-- INNER DROPDOWN ITEM -->
 					<li class="inner-dropdown-item">
-						<a href="dashboard-inbox-v2.html">Your Inbox (36) V2</a>
-					</li>
-					<!-- /INNER DROPDOWN ITEM -->
-
-					<!-- INNER DROPDOWN ITEM -->
-					<li class="inner-dropdown-item">
-						<a href="dashboard-openmessage.html">Open Message</a>
-					</li>
-					<!-- /INNER DROPDOWN ITEM -->
-
-					<!-- INNER DROPDOWN ITEM -->
-					<li class="inner-dropdown-item">
-						<a href="dashboard-inbox.html">Starred Message</a>
-					</li>
-					<!-- /INNER DROPDOWN ITEM -->
-
-					<!-- INNER DROPDOWN ITEM -->
-					<li class="inner-dropdown-item">
-						<a href="dashboard-inbox.html">Deleted Messages</a>
+						<a href="{{url('/create-gig')}}">Create Gigs</a>
 					</li>
 					<!-- /INNER DROPDOWN ITEM -->
 				</ul>
 				<!-- INNER DROPDOWN -->
+				
+                <!-- PIN -->
+                <span class="pin soft-edged big secondary">!</span>
+                <!-- /PIN -->
+			</li>
+			<li class="dropdown-item interactive">
+				<a href="#">
+                    <span class="sl-icon icon-tag"></span>
+                    Theme Manage
+                    <!-- SVG ARROW -->
+					<svg class="svg-arrow">
+						<use xlink:href="#svg-arrow"></use>
+					</svg>
+					<!-- /SVG ARROW -->
+				</a>
 
+				<!-- INNER DROPDOWN -->
+				<ul class="inner-dropdown">
+					<!-- INNER DROPDOWN ITEM -->
+					<li class="inner-dropdown-item">
+						<a href="dashboard-inbox.html">All Theme Manage (36)</a>
+						<!-- PIN -->
+						<span class="pin soft-edged secondary">2</span>
+						<!-- /PIN -->
+					</li>
+					<!-- /INNER DROPDOWN ITEM -->
+
+					<!-- INNER DROPDOWN ITEM -->
+					<li class="inner-dropdown-item">
+						<a href="dashboard-inbox.html">Theme Upload</a>
+					</li>
+					<!-- /INNER DROPDOWN ITEM -->
+				</ul>
+				<!-- INNER DROPDOWN -->
+				
                 <!-- PIN -->
                 <span class="pin soft-edged big secondary">!</span>
                 <!-- /PIN -->
@@ -131,26 +157,11 @@
 			<!-- /DROPDOWN ITEM -->
 
 			<!-- DROPDOWN ITEM -->
-			<li class="dropdown-item">
-				<a href="dashboard-purchases.html">
-                    <span class="sl-icon icon-tag"></span>
-                    Your Purchases
-                </a>
-			</li>
-			<!-- /DROPDOWN ITEM -->
-
-			<!-- DROPDOWN ITEM -->
-			<li class="dropdown-item">
-				<a href="dashboard-buycredits.html">
-                    <span class="sl-icon icon-credit-card"></span>
-                    Buy Credits
-                </a>
-			</li>
+			
 			<!-- /DROPDOWN ITEM -->
 		</ul>
 		<!-- /DROPDOWN -->
-
-        <!-- SIDE MENU TITLE -->
+<!-- SIDE MENU TITLE -->
 		<p class="side-menu-title">Info &amp; Statistics</p>
 		<!-- /SIDE MENU TITLE -->
 
@@ -158,21 +169,29 @@
 		<ul class="dropdown dark hover-effect">
 			<!-- DROPDOWN ITEM -->
 			<li class="dropdown-item">
-				<a href="dashboard-statement.html">
-                    <span class="sl-icon icon-layers"></span>
-                    Sales Statement
+				<a href="dashboard-orders.html">
+                    <span class="sl-icon icon-people"></span>
+                    Orders
                 </a>
 			</li>
-			<!-- /DROPDOWN ITEM -->
-
-			<!-- DROPDOWN ITEM -->
+			<li class="dropdown-item">
+				<a href="dashboard-affiliate-program.html">
+                    <span class="sl-icon icon-diamond"></span>
+                    Affiliate Program
+                </a>
+			</li>
+			<li class="dropdown-item">
+				<a href="dashboard-statement.html">
+                    <span class="sl-icon icon-energy"></span>
+                    Earning Statement
+                </a>
+			</li>
 			<li class="dropdown-item">
 				<a href="dashboard-statistics.html">
                     <span class="sl-icon icon-chart"></span>
                     Statistics
                 </a>
 			</li>
-			<!-- /DROPDOWN ITEM -->
 		</ul>
 		<!-- /DROPDOWN -->
 
@@ -182,24 +201,6 @@
 
 		<!-- DROPDOWN -->
 		<ul class="dropdown dark hover-effect">
-			<!-- DROPDOWN ITEM -->
-			<li class="dropdown-item">
-				<a href="dashboard-uploaditem.html">
-                    <span class="sl-icon icon-arrow-up-circle"></span>
-                    Upload Item
-                </a>
-			</li>
-			<!-- /DROPDOWN ITEM -->
-
-			<!-- DROPDOWN ITEM -->
-			<li class="dropdown-item">
-				<a href="dashboard-manageitems.html">
-                    <span class="sl-icon icon-folder-alt"></span>
-                    Manage Items
-                </a>
-			</li>
-			<!-- /DROPDOWN ITEM -->
-
             <!-- DROPDOWN ITEM -->
 			<li class="dropdown-item">
 				<a href="dashboard-withdrawals.html">
@@ -207,11 +208,11 @@
                     Withdrawals
                 </a>
 			</li>
-			<!-- /DROPDOWN ITEM -->
 		</ul>
 		<!-- /DROPDOWN -->
+		<a href="#" class="button primary">Become a Buyer</a>
 
-        <a href="#" class="button medium secondary">Logout</a>
+        <a href="#" class="button medium secondary"><span class="sl-icon icon-logout"></span> Logout</a>
 	</div>
 	<!-- /SIDE MENU -->
 

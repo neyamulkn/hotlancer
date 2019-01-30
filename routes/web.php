@@ -25,6 +25,12 @@ Route::post('/location/update', 'userinfoController@location_update');
 Route::post('/experience/update', 'userinfoController@experience_update');
 Route::post('/skillTags/update', 'userinfoController@skillTags_update');
 
+
+Route::get('/create-gig', 'gigController@create_gig');
+
+
+
+
 //frontend
 
 Route::get('/{id}', 'profileController@profile_view');

@@ -717,6 +717,7 @@ img.aboutinfoimg {
     background-color: white;
     padding-bottom: 10px;
 	padding-top: 10px;
+    border-bottom: 3px solid #00d7b3;
 }
 .abouba {
     background: white;
@@ -865,6 +866,84 @@ p.category.tertiary.v2 {
     color: green;
 }
 
+.comment-giglt {
+    float: left;
+    width: 75%;
+	margin-top: 15px;
+}
+.comment-gigrt {
+    float: right;
+    width: 24%;
+}
+.input-wrap.gig-edit-title-wrap {
+    float: left;
+    width: 77%;
+}
+textarea#gig_title {
+    text-indent: 87px;
+    font-size: 40px;
+    line-height: 45px;
+    letter-spacing: 1px;
+}
+.char-count {
+    text-align: right;
+    padding-top: 8px;
+    font-size: 12px;
+    color: #999;
+    display: inline-block;
+    float: right;
+}
+textarea.gig-title-text {
+    text-indent: 87px;
+    font-size: 40px;
+    line-height: 45px;
+    letter-spacing: 1px;
+    width: 100%;
+    color: #ddd;
+    overflow: hidden;
+}
+.ttinput-groupt1 {
+    text-align: center;
+    padding-top: 15px;
+    font-weight: bold;
+    float: left;
+    width: 19%;
+    margin-right: 10px;
+}
+.input-container.half.hv4 {
+    float: left;
+    width: 45%;
+    margin: 10px;
+}
+.input-wrap gig-edit-title-wrap, .char-count-desc, .gig-before-title {
+    position: absolute;
+    font: 400 40px/45px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #ddd;
+    margin: 22px 0 0 7px;
+}
+.gig-edit-tags-desc {
+    text-align: right;
+}
+.input-wrap.gig-edit-tags-input-wrap {
+    float: left;
+    width: 78%;
+}
+input[type="radio"], input[type="checkbox"] {
+    display: none !important;
+}
+label:last-child {
+    text-align: center;
+}
+label > .checkbox {
+    border: 1px solid #bbb;
+}
+.gigseditor {
+    overflow: auto;
+}
+label > .radio, label > .checkbox {
+    border: 1px solid #bbb !important;
+}
 
 @media screen and (max-width: 900px)  {
 	.order12rt {
