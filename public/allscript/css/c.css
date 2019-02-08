@@ -920,7 +920,8 @@ textarea.gig-title-text {
     font: 400 40px/45px "Helvetica Neue",Helvetica,Arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     color: #ddd;
-    margin: 22px 0 0 7px;
+    top: 22px;
+    left: 8px;
 }
 .gig-edit-tags-desc {
     text-align: right;

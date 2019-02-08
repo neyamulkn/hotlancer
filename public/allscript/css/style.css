@@ -28,7 +28,8 @@
 }
 h1, h2, h3, h4,
 h5, h6, p, a {
-  line-height: 1em; }
+  line-height: 1em;
+  color:#000 !important; }
 
 a {
   text-decoration: none; }
@@ -1151,10 +1152,7 @@ header, .menu-bar, .banner, #services,
 .price {
   font-size: 1.25em;
   position: relative; }
-  .price span {
-    font-size: 0.6em;
-    position: relative;
-    top: -2px; }
+
   .price.tiny {
     font-size: 1em; }
     .price.tiny span {
@@ -7510,7 +7508,7 @@ textarea.parsley-error {
   opacity: 1;
 }
 
-.parsley-required, .parsley-type, .invalid-feedback{
+.parsley-required, .parsley-type, .invalid-feedback , .parsley-length{
 color:#e3342f;
 }
 

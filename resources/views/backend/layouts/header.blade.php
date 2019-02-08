@@ -48,12 +48,47 @@
 			<!-- /USER QUICKVIEW -->
 		</div>
 		<!-- /SIDE MENU HEADER -->
+		<ul class="dropdown dark hover-effect interactive">
+		<li class="dropdown-item interactive">
+				<a href="#">
+                    <span class="sl-icon icon-tag"></span>
+                    Super Admin
+                    <!-- SVG ARROW -->
+					<svg class="svg-arrow">
+						<use xlink:href="#svg-arrow"></use>
+					</svg>
+					<!-- /SVG ARROW -->
+				</a>
 
-		<!-- SIDE MENU TITLE -->
+				<!-- INNER DROPDOWN -->
+				<ul class="inner-dropdown">
+					
+					<li class="inner-dropdown-item">
+						<a href="{{url('/dashbord/gig-category')}}">Add Gig category</a>
+						
+					</li>
+					<li class="inner-dropdown-item">
+						<a href="{{url('dashbord/gig-subcategory')}}">Add sub category</a>
+					</li>
+					<li class="inner-dropdown-item">
+						<a href="{{url('dashbord/gig-metadata')}}">Add Sub Filter</a>
+					</li>
+
+					<li class="inner-dropdown-item">
+						<a href="{{url('dashbord/gig-pricescope')}}">Add gig price scope</a>
+					</li>
+
+					<li class="inner-dropdown-item">
+						<a href="{{url('/dashbord/filter/')}}">Add Filter</a>
+					</li>
+					
+				</ul>
+				<!-- INNER DROPDOWN -->
+			</li>
+
 		<p class="side-menu-title">Your Account</p>
 		<!-- /SIDE MENU TITLE -->
-		<ul class="dropdown dark hover-effect interactive">
-			<!-- DROPDOWN ITEM -->
+		<!-- DROPDOWN ITEM -->
 			<li class="dropdown-item">
 				<a href="dashboard-settings.html">
                     <span class="sl-icon icon-settings"></span>
@@ -110,7 +145,7 @@
 
 					<!-- INNER DROPDOWN ITEM -->
 					<li class="inner-dropdown-item">
-						<a href="{{url('/create-gig')}}">Create Gigs</a>
+						<a href="{{url('/dashbord/create-gig')}}">Create Gigs</a>
 					</li>
 					<!-- /INNER DROPDOWN ITEM -->
 				</ul>

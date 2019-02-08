@@ -168,3 +168,25 @@ textarea{
 p, ul{
 	margin: 0px;
 }
+
+
+.price input[type="text"], input[type="password"], input[type="number"] {
+    width: 75%;
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid #ebebeb;
+    line-height: 40px;
+    border-radius: 4px;
+    margin: auto;
+}
+
+td {
+	position: relative;
+}
+
+.price_dollar{
+	position:absolute;
+	top:17px;
+	left: 35px;
+	font-size: 15px;
+}
