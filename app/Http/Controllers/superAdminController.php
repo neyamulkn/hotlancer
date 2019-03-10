@@ -15,7 +15,8 @@ class superAdminController extends Controller
     public function create_gig_category(Request $request){
 
     		 $data = [
-    			'category_name' => $request->gig_category,
+                'category_name' => $request->gig_category,
+    			'category_url' => str_slug($request->gig_category),
     			'sorting' => '',
     			'status' =>  $request->status
     		 ];
@@ -31,7 +32,8 @@ class superAdminController extends Controller
     public function create_gig_subcategory(Request $request){
 
      		$data = [
-     			'subcategory_name' => $request->subcategory_name,
+                'subcategory_name' => $request->subcategory_name,
+     			'subcategory_url' => str_slug($request->subcategory_name),
      			'category_id' => $request->category_id,
      			'status' =>  $request->status
      		];
@@ -50,6 +52,7 @@ class superAdminController extends Controller
           'filter_id' => $request->filter_id,
           'filter_type' => isset($request->filter_type) ? 'Yes' : 'No'
         ];
+
         gig_metadata::create($data);
         return back();
     }

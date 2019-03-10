@@ -24,6 +24,7 @@ table {
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
+    text-align: center;
 }
 .table {
     width: 100%;
@@ -41,22 +42,18 @@ table {
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
+    text-align: center;
+    color: #777;
+    font-size: 15px;
 }
-.price {
-    font-size: 3em;
-}
+
 .panel-title {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 16px;
     color: inherit;
 }
-.price {
-    font-size: 3em;
-}
-.price {
-    font-size: 3em;
-}
+
 .table {
     border-spacing: 0;
     border-collapse: collapse;

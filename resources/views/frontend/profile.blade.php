@@ -24,327 +24,102 @@
 @endsection
 <!-- MAIN MENU -->
 @section('menubar')
+	
+	<!-- MAIN MENU -->
 	<div class="main-menu-wrap">
 		<div class="menu-bar">
 			<nav>
 				<ul class="main-menu">
 					<!-- MENU ITEM -->
-					<li class="menu-item">
-						<a href="index.html">Home</a>
-					</li>
-					<!-- /MENU ITEM -->
-
-					<!-- MENU ITEM -->
-					<li class="menu-item">
-						<a href="how-to-shop.html">How to shop</a>
-					</li>
-					<!-- /MENU ITEM -->
-
-					<!-- MENU ITEM -->
-					<li class="menu-item">
-						<a href="products.html">Products</a>
-					</li>
-					<!-- /MENU ITEM -->
-
-					<!-- MENU ITEM -->
-					<li class="menu-item">
-						<a href="services.html">Services</a>
-					</li>
-					<!-- /MENU ITEM -->
-
-					<!-- MENU ITEM -->
-					<li class="menu-item">
-						<a href="shop-gridview-v1.html">Online goods</a>
-					</li>
-					<!-- /MENU ITEM -->
-
-					<!-- MENU ITEM -->
-					<li class="menu-item sub">
-						<a href="#">
-							Features
-							<!-- SVG ARROW -->
-							<svg class="svg-arrow">
-								<use xlink:href="#svg-arrow"></use>
-							</svg>
-							<!-- /SVG ARROW -->
-						</a>
-						<div class="content-dropdown">
-							<!-- FEATURE LIST BLOCK -->
+					<li class="menu-item category-sitebar">
+						<a href="item-filter/graphics-design">Graphics &amp; Design	
+						</a>	
+						<div class="content-dropdown home_manu">
+						<!-- FEATURE LIST BLOCK -->
 							<div class="feature-list-block">
-								<h6 class="feature-list-title">HOTLancer.com</h6>
-								<hr class="line-separator">
 								<!-- FEATURE LIST -->
 								<ul class="feature-list">
-									<!-- FEATURE LIST ITEM -->
 									<li class="feature-list-item">
-										<a href="index.html">Homepage V1</a>
+										<a href="">Logo Design</a>
 									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
 									<li class="feature-list-item">
-										<a href="home-v2.html">Homepage V2</a>
+										<a href="">Business Cards &amp; Stationery</a>
 									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
 									<li class="feature-list-item">
-										<a href="itemview-versions.html">Item View Versions</a>
+										<a href="">Illustration</a>
 									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
 									<li class="feature-list-item">
-										<a href="shop-gridview-v1.html">Shop Grid View V1</a>
+										<a href="">Cartoons &amp; Caricatures</a>
 									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
 									<li class="feature-list-item">
-										<a href="shop-gridview-v2.html">Shop Grid View V2</a>
+										<a href="">Flyers &amp; Brochures</a>
 									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
 									<li class="feature-list-item">
-										<a href="shop-listview-v1.html">Shop List View V1</a>
+										<a href="">Book Covers &amp; Packaging</a>
 									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
 									<li class="feature-list-item">
-										<a href="shop-listview-v2.html">
-											Shop List View V2
-											<!-- PIN -->
-											<span class="pin primary">hot</span>
-											<!-- /PIN -->
-										</a>
+										<a href="">Web &amp; Mobile Design</a>
 									</li>
-									<!-- /FEATURE LIST ITEM -->
-
 									<li class="feature-list-item">
-										<a href="author-profile.html">Profile Page</a>
+										<a href="">Social Media Design</a>
 									</li>
-									<!-- /FEATURE LIST ITEM -->
+									<li class="feature-list-item">
+										<a href="">Banner Ads</a>
+									</li>
+									<li class="feature-list-item">
+										<a href="">Photoshop Editing</a>
+									</li>
+									<li class="feature-list-item">
+										<a href="">3D &amp; 2D Models</a>
+									</li>
+									<li class="feature-list-item">
+										<a href="">T-Shirts &amp; Merchandise</a>
+									</li>
+									<li class="feature-list-item">
+										<a href="">Presentation Design</a>
+									</li>
+									<li class="feature-list-item">
+										<a href="">infographics</a>
+									</li>
+									<li class="feature-list-item">
+										<a href="">Vector Tracing</a>
+									</li>
+									<li class="feature-list-item">
+										<a href="">Invitations</a>
+									</li>
 								</ul>
-								<!-- /FEATURE LIST -->
-
-								<!-- FEATURE LIST -->
-								<ul class="feature-list">
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="blog-v1.html">Blog Page V1</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="blog-v2.html">Blog Page V2</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="open-post.html">Open Post</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="forum.html">Forum Board</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="subforum.html">Subforum</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="open-topic.html">Open Topic</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="login-register.html">Login and Register</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="menu-dropdowns.html">Menu and Dropdowns</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-								</ul>
-								<!-- /FEATURE LIST -->
 							</div>
-							<!-- /FEATURE LIST BLOCK -->
-
-							<!-- FEATURE LIST BLOCK -->
-							<div class="feature-list-block">
-								<h6 class="feature-list-title">Product Pages</h6>
-								<hr class="line-separator">
-								<!-- FEATURE LIST -->
-								<ul class="feature-list">
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="item-v1.html">Item Page V1</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="item-v2.html">
-											Item Page V2
-											<!-- PIN -->
-											<span class="pin secondary">new</span>
-											<!-- /PIN -->
-										</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="product-page.html">Product Page</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="auction-page.html">Auction Page</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="service-page.html">Service Page</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="favourites.html">Favourite Products Grid View</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="favourites-listview.html">Favourite Products List View</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="alerts-notifications.html">
-											Alerts &amp; Notifications
-											<!-- PIN -->
-											<span class="pin violet">new</span>
-											<!-- /PIN -->
-										</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-								</ul>
-								<!-- /FEATURE LIST -->
-							</div>
-							<!-- /FEATURE LIST BLOCK -->
-
-							<!-- FEATURE LIST BLOCK -->
-							<div class="feature-list-block">
-								<h6 class="feature-list-title">Dashboard</h6>
-								<hr class="line-separator">
-								<!-- FEATURE LIST -->
-								<ul class="feature-list">
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="dashboard-settings.html">Account Settings</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="dashboard-statistics.html">Statistics Page</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="dashboard-statement.html">Sales Statement</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="dashboard-inbox.html">Inbox Page</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="dashboard-openmessage.html">Open Message</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="dashboard-uploaditem.html">Upload Page</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-								</ul>
-								<!-- /FEATURE LIST -->
-							</div>
-							<!-- /FEATURE LIST BLOCK -->
-
-							<!-- FEATURE LIST BLOCK -->
-							<div class="feature-list-block">
-								<h6 class="feature-list-title">Gamification</h6>
-								<hr class="line-separator">
-								<!-- FEATURE LIST -->
-								<ul class="feature-list">
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="community-badges.html">Author Badges Page</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="badges.html">All Badges (Big and Small)</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="flag-badges.html">Flag Badges (Big and Small)</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="badges-boxes.html">Badge Boxes Versions</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-
-									<!-- FEATURE LIST ITEM -->
-									<li class="feature-list-item">
-										<a href="author-badges.html">Public Author Badges</a>
-									</li>
-									<!-- /FEATURE LIST ITEM -->
-								</ul>
-								<!-- /FEATURE LIST -->
-							</div>
-							<!-- /FEATURE LIST BLOCK -->
 						</div>
 					</li>
 					<!-- /MENU ITEM -->
+					<li class="menu-item category-sitebar">
+						<a href="item-filter/digital-marketing">Digital Marketing</a>
+					</li>
+					<!-- /MENU ITEM -->
+					<li class="menu-item category-sitebar">
+						<a href="item-filter/writing-translation">Writing &amp; Translation</a>	
+					</li>
+					<!-- /MENU ITEM -->
+					<li class="menu-item category-sitebar">
+						<a href="item-filter/video-animation">Video &amp; Animation</a>	
+					</li>
+					<!-- /MENU ITEM -->
+					<li class="menu-item category-sitebar">
+						<a href="item-filter/music-audio">Music &amp; Audio</a>	
+					</li>
+					<!-- /MENU ITEM -->
+					<li class="menu-item category-sitebar">
+						<a href="item-filter/programming-tech">Programming &amp; Tech</a>	
+					</li>
+					<li class="menu-item category-sitebar">
+						<a href="item-filter/music-audio">Music &amp; Audio</a>	
+					</li>
+					<!-- /MENU ITEM -->
+					<li class="menu-item category-sitebar">
+						<a href="item-filter/programming-tech">Programming &amp; Tech</a>	
+					</li>
 				</ul>
 			</nav>
-			<form class="search-form">
-				<input type="text" class="rounded" name="search" id="search_products" placeholder="Search products here...">
-				<input type="image" src="{{asset('/allscript')}}/images/search-icon.png" alt="search-icon">
-			</form>
 		</div>
 	</div>
 @endsection

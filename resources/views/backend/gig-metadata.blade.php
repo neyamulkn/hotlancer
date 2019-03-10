@@ -61,7 +61,6 @@
 					<div class="input-container">
 						<label class="rl-label">Sub Filter Name</label>
 						<input name="sub_filter_name" value="" type="text" id="" placeholder="Enter Meta Data Name here...">
-						<input name="filter_type" value="metadata" type="hidden">
 					</div>
 	        	</div>
 

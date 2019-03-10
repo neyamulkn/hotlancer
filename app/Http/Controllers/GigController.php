@@ -13,6 +13,7 @@ use App\gig_feature;
 use App\gig_requirement;
 use App\gig_image;
 use App\filter;
+use App\gig_metadata_filter;
 use Image;
 use Auth;
 class GigController extends Controller
@@ -32,6 +33,7 @@ class GigController extends Controller
         $category_id = $request->category_id;
         $get_category = gig_subcategory::where('category_id', $category_id)->get();
         if($get_category){
+                echo '<option value="">select sub category</option>';
             foreach ($get_category as $category) {
                 echo '
                  <option value="'.$category->id.'">'.$category->subcategory_name.'</option>';
@@ -44,24 +46,43 @@ class GigController extends Controller
         $subcategory_id = $request->subcategory_id; // 
 
         $get_filter_data = filter::where('mete_tag', 'Yes')->get(); // get all data for filter table
-
+        $f=0;
+        if($f == 0){echo  '<div class="tab">'; }
         foreach($get_filter_data as $filter_data){
             $create_array = explode(',', $filter_data->sub_category_id); //convert array for check 
-           $f=0;
            
             for($i=0; $i<count($create_array); $i++){
                 if($create_array[$i] == $subcategory_id){ // check sub_id in row then loop check next row
                     $filter_id =  $filter_data->filter_id;
-                    // $get_medata = gig_metadata::where('filter_id', $filter_id)->get(); 
-                    if($f == 0){echo  '<div class="tab">'; }
-                    echo '<p class="tablinks" onclick="openCity(event, '.$filter_data->filter_name.')" id="defaultOpen"><input type="hidden" name="filter_id[]" value="'.$filter_id.'">'. $filter_data->filter_name.'</p>';
-
-                    if($f == 0){echo '</div'; }
+                    echo '<p class="tablinks" onclick="openCity(event, '."'".$filter_data->filter_id."'".')" id="defaultOpen"><input type="hidden" name="filter_id[]" value="'.$filter_id.'">'. $filter_data->filter_name.'</p>';
                 }
             }
-        $f++;
         }
+        if($f == 0){ echo '</div>';  $f++; }
        
+
+        foreach($get_filter_data as $filter_data){
+            $create_array = explode(',', $filter_data->sub_category_id); //convert array for check 
+          
+            for($i=0; $i<count($create_array); $i++){
+                if($create_array[$i] == $subcategory_id){ // check sub_id in row then loop check next row
+                 echo '<div id="'.$filter_data->filter_id.'" style="display:none;" class="tabcontent">
+                 <p>'.$filter_data->filter_msg.'</p>
+                 ' ;
+                    $filter_id =  $filter_data->filter_id;
+                    $get_medata = gig_metadata::where('filter_id', $filter_id)->where('filter_type', 'No')->get(); 
+                    
+                   foreach ($get_medata as $metada) {
+                       echo '<li>
+                             <input type="checkbox" id="id'.$metada->sub_filter_id.'"name="gig_metadata[]" value="'.$metada->sub_filter_id.'"><label for="id'.$metada->sub_filter_id.'"><span class="checkbox primary primary"></span>'.$metada->sub_filter_name.'</label>
+                             </li>';
+                   }
+                    
+                 echo '</div>';
+                }
+            }
+           
+        }
         
         //$get_category = filter::where('sub_category_id', $subcategory_id)->where('mete_tag', 'Yes')->get();
 
@@ -86,14 +107,14 @@ class GigController extends Controller
     {
         
         $get_id = Auth::user()->id;
-        $gig_metadata = '';
+        $filter_id = '';
 
         $gig_url = str_slug($request->gig_title);
 
         if(isset($request->filter_id)){
-            $gig_metadata = implode(',', $request->filter_id);
+            $filter_id = implode(',', $request->filter_id);
         }else{
-             $gig_metadata = ' ';
+             $filter_id = ' ';
         }
         
         $gig_search_tag = $request->gig_search_tag;
@@ -109,14 +130,27 @@ class GigController extends Controller
         'gig_dsc'=> '',
         'category_name'=> $request->category_id,
         'gig_subcategory'=> $request->subcategory,
-        'gig_metadata'=> $gig_metadata,
+        'gig_metadata'=> $filter_id,
         'gig_payment_type'=> $request->gig_payment_type,
         'gig_search_tag'=> $gig_search_tag,
         'gig_user_id'=> $get_id,
         'gig_status' => 'unactive'
         ];
+
+       
        $insert_id = gig_basic::insertGetId($alldata);
-      
+        
+        if(isset($request->gig_metadata)){
+            foreach ($request->gig_metadata as $gig_metadata) {
+                $data = [
+                    'gig_id' => $insert_id,
+                    'metadata_id' => $gig_metadata
+                ];
+
+               $succcess = gig_metadata_filter::create($data);
+
+            }
+        }
         $link =  asset('/dashbord/create-gig/2nd').'/'.$gig_url;
         return redirect($link);
       
@@ -316,6 +350,10 @@ class GigController extends Controller
         }
     }
 
+    public function insert_gig_step_finish()
+    {
+        return redirect('/dashbord/create-gig/');
+    }
     public function question_answer_delete(Request $request)
     {
 

@@ -1,5 +1,7 @@
 @extends('backend.layouts.master')
 
+<?php $title = strtolower(Auth::user()->username) ; ?>
+@section('title', $title)
 
 @section('css')
 	<link rel="stylesheet" href="{{asset('/allscript')}}/css/icon.css">
@@ -286,16 +288,6 @@ height: 145px;
 						<input name="zip_code" value="{{$userinfo->zip_code }}" type="text" placeholder="Enter your Zip Code here...">
 					</div>
 
-					<div class="input-container half">
-						<label class="rl-label required">State/City</label>
-						<input name="user_state" value="{{ $userinfo->user_state }}" type="text" placeholder="Enter your Zip Code here...">
-					</div>
-
-					<div class="input-container half">
-						<label for="zipcode3" class="rl-label required">Zip Code</label>
-						<input name="zip_code" value="{{$userinfo->zip_code }}" type="text" placeholder="Enter your Zip Code here...">
-					</div>
-
 					<div class="input-container">
 					
 						<label class="rl-label">Phone</label>
@@ -516,6 +508,7 @@ height: 145px;
         
      }
     </script>
+
 
 <script src="{{asset('/allscript')}}/js/parsley.min.js"></script>	
 @endsection

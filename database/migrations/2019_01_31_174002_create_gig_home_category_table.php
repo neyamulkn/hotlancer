@@ -16,6 +16,7 @@ class CreateGigHomeCategoryTable extends Migration
         Schema::create('gig_home_category', function (Blueprint $table) {
             $table->increments('id');
             $table->string('category_name', 60);
+            $table->string('category_url', 60);
             $table->string('sorting', 5)->nullable();
             $table->string('status',10);
             $table->timestamps();

@@ -33,6 +33,10 @@ class CreateGigPricesTable extends Migration
             $table->string('rivision_p');
             $table->string('rivision_s');
             $table->string('rivision_pm');
+            $table->string('daily_work_b', 15)->nullable();
+            $table->string('daily_work_p', 15)->nullable();
+            $table->string('daily_work_s', 15)->nullable();
+            $table->string('daily_work_pm', 15)->nullable();
             $table->double('basic_p', 8, 2);
             $table->double('plus_p', 8, 2);
             $table->double('super_p', 8, 2);

@@ -54,14 +54,18 @@
 					<input type="image" src="{{ asset('allscript/images/search-icon.png') }}" alt="search-icon">
 				</form>
 			</div>
-				<?php if(Auth::check()){ ?>
+				<?php if(Auth::check()){ 
+					$get_id = Auth::user()->id;
+					$get_user_info = DB::table('userinfos')->where('user_id', $get_id)->first();
+
+				?>
 				<div class="user-quickview">
 					<!-- USER AVATAR -->
-					<a href="author-profile.html">
+					<a href="{{url('dashbord/profile/setting')}}">
 					<div class="outer-ring">
 						<div class="inner-ring"></div>
 						<figure class="user-avatar">
-							<img src="{{asset('allscript') }}/images/avatars/avatar_01.jpg" alt="image">
+							<img src="{{asset('image/'.'/'.$get_user_info->user_image) }}"  alt="image">
 						</figure>
 					</div>
 					</a>
@@ -84,7 +88,7 @@
 							<a href="{{url('/'.Auth::user()->username)}}">Profile Page</a>
 						</li>
 						<li class="dropdown-item">
-							<a href="{{url('/profile/setting')}}">Account Settings</a>
+							<a href="{{url('dashbord/profile/setting')}}">Account Settings</a>
 						</li>
 						<li class="dropdown-item">
 							<a href="dashboard-purchases.html">Your Purchases</a>
@@ -299,9 +303,9 @@
 
 				<!-- ACCOUNT ACTIONS -->
 				<div class="account-actions no-space">
-					<a href="" class="interesting-link header-link-login">Find Jobs</a>
+					<!-- <a href="" class="interesting-link header-link-login">Find Jobs</a>
 					<a href="" class="interesting-link header-link-login">Find Gigs</a>
-					<a href="" class="interesting-link header-link-login">Find Themes</a>
+					<a href="" class="interesting-link header-link-login">Find Themes</a> -->
 					<?php if(!Auth::check()){ ?>
 					<a href="{{ route('register') }}" class="interesting-link header-link-login">Register</a>
 					<a href="{{ route('login') }}" class="interesting-link header-link-login">Login</a>
@@ -623,7 +627,48 @@
 	</div>
 	<!-- /SIDE MENU -->
 
-@yield('menubar')
+<!-- MAIN MENU -->
+	<div class="main-menu-wrap">
+		<div class="menu-bar">
+			<nav>
+				<ul class="main-menu">
+					<!-- MENU ITEM -->
+				<?php
+					$get_category = DB::table('gig_home_category')->orderBy('sorting', 'asc')->get();
+					if($get_category){
+					foreach ($get_category as $show_category) {
+						$category_id = $show_category->id;
+					
+				?>
+					<li class="menu-item category-sitebar">
+						<a href="item-filter/graphics-design">{{$show_category->category_name}}
+						</a>	
+
+						<?php
+						$sub_category = DB::table('gig_subcategories')->where('category_id', $category_id)->get();
+						if($sub_category){
+						?>
+						<div class="content-dropdown home_manu">
+						<!-- FEATURE LIST BLOCK -->
+							<div class="feature-list-block">
+								<!-- FEATURE LIST -->
+								<ul class="feature-list">
+									
+								@foreach ($sub_category as $show_subcategory)
+									<li class="feature-list-item">
+										<a href="{{url('/categories/'.str_slug($show_category->category_name).'/'. str_slug($show_subcategory->subcategory_name))}}"><?php echo $show_subcategory->subcategory_name; ?></a>
+									</li>
+								@endforeach
+								</ul>
+							</div>
+						</div>
+						<?php } ?>
+					</li>
+				<?php }} ?>
+				</ul>
+			</nav>
+		</div>
+	</div>
 
 @yield('content')
 

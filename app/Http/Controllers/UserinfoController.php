@@ -48,6 +48,25 @@ class UserinfoController extends Controller
         }
     }
 
+    public function user_image(Request $request){
+        $get_id = Auth::user()->id;
+
+        $this->validate($request, [
+            'user_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+        $image = $request->file('user_image');
+        $new_image_name = rand() .'.'. $image->getClientOriginalExtension();
+
+        $image->move(public_path('image'), $new_image_name);
+
+        $user_image = [
+            'user_image' => $new_image_name,
+        ];
+
+        userinfo::where('user_id', $get_id)->update($user_image);
+        return back();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -8,6 +8,7 @@ class gig_subcategory extends Model
 {
     protected $fillable = [
     	'subcategory_name',
+    	'subcategory_url',
     	'category_id',
     	'status'
     ];

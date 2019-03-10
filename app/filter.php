@@ -9,6 +9,7 @@ class filter extends Model
     protected $fillable = [
     	'filter_name',
     	'sub_category_id',
-    	'mete_tag'
+    	'mete_tag',
+    	'filter_msg'
     ];
 }

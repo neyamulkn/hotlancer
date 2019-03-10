@@ -61,7 +61,56 @@ color: #f22f2f;
 float: right;
 }
 
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #F7F7F7;
+  width: 35%;
+  height: 300px;
+ 
+}
 
+/* Style the buttons inside the tab */
+.tab p {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 5px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+/* Change background color of buttons on hover */
+.tab p:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab p.active {
+  background-color: #fff;
+  border-right: none;
+}
+.tab :hover{
+  border-right: none;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 30px;
+  border: 1px solid #ccc;
+  width: 65%;
+  border-left: none;
+  height: 300px;
+}
    </style>
 @endsection
 @section('content')
@@ -181,26 +230,22 @@ float: right;
                                          </div>
                                     </div><br/>
                                     
-                                    <div class="row" id="show_metadata">
+                                  <div class="row" id="show_metadata">
                                         <div class="col-md-12">
                                         	<div class="input-container" id="sub_category_filter">
-											
-												<ul class="filter_ul"  id="filter_ul__7">
-													<div class="row">
-														<div class="col-md-2">
-															<label class="rl-label filter_boreder">GIG METADATA </label>
-														</div>
-														<div class="col-md-10 ">
-															<ul class="border-left-div filter_ul_sub_open" id="sub_filter_main__6">
-																<label class="rl-label filter_boreder">Please select the platforms that you can develop gig for.</label>
+											<ul class="filter_ul"  id="filter_ul__7">
+                  								<div class="row">
+                  									<div class="col-md-2">
+                  										<label class="rl-label filter_boreder">GIG METADATA</label>
+                  									</div>
+                  									<div class="col-md-10 ">
+                                                		 <div id="metadata"></div>
 
-																<div class="row" id="metadata"></div>
-															</ul>
-														</div>
-													</div>		
-												</ul>
+                  										</div>
+                  								</div>		
+                  							</ul>
 
-											</div>
+                  							</div>
                                    		</div>
                                     </div>
 
@@ -459,7 +504,7 @@ float: right;
 												<td>
 													<label for="price_filter" class="select-block">
 														<select name="rivision_b" id="price_filter">
-															<?php for($d=1; $d<=9; $d++){ echo '<option value="'.$d.'">'.$d.'</option>'; } ?>
+															<?php for($d=1; $d<=12; $d++){ echo '<option value="'.$d.'">'.$d.'</option>'; } ?>
 															<option value="unlimited">unlimited</option>
 														</select>
 														<!-- SVG ARROW -->
@@ -473,7 +518,7 @@ float: right;
 												<td>
 													<label for="rivision_p" class="select-block">
 														<select name="rivision_p" id="revision_p">
-															<?php for($d=1; $d<=9; $d++){ echo '<option value="'.$d.'">'.$d.'</option>'; } ?>
+															<?php for($d=1; $d<=12; $d++){ echo '<option value="'.$d.'">'.$d.'</option>'; } ?>
 															<option value="unlimited">unlimited</option>
 														</select>
 														<!-- SVG ARROW -->
@@ -487,7 +532,7 @@ float: right;
 												<td>
 													<label for="price_filter" class="select-block">
 														<select name="rivision_s" id="price_filter">
-															<?php for($d=1; $d<=9; $d++){ echo '<option value="'.$d.'">'.$d.'</option>'; } ?>
+															<?php for($d=1; $d<=12; $d++){ echo '<option value="'.$d.'">'.$d.'</option>'; } ?>
 															<option value="unlimited">unlimited</option>
 														</select>
 														<!-- SVG ARROW -->
@@ -501,7 +546,7 @@ float: right;
 												<td>
 													<label for="price_filter" class="select-block">
 														<select name="rivision_pm" id="price_filter">
-															<?php for($d=1; $d<=9; $d++){ echo '<option value="'.$d.'">'.$d.'</option>'; } ?>
+															<?php for($d=1; $d<=12; $d++){ echo '<option value="'.$d.'">'.$d.'</option>'; } ?>
 															<option value="unlimited">unlimited</option>
 														</select>
 														<!-- SVG ARROW -->
@@ -513,6 +558,66 @@ float: right;
 												
 												</td>
 											  </tr>
+
+                      <tr>
+                        <td>Daily work</td>
+                        <td>
+                          <label for="price_filter" class="select-block">
+                            <select name="daily_work_b" id="price_filter">
+                              <?php for($d=1; $d<=12; $d++){ echo '<option value="'.$d.'">'.$d. '  hour</option>'; } ?>
+                              <option value="unlimited">unlimited</option>
+                            </select>
+                            <!-- SVG ARROW -->
+                            <svg class="svg-arrow">
+                              <use xlink:href="#svg-arrow"></use>
+                            </svg>
+                            <!-- /SVG ARROW -->
+                          </label>
+                        
+                        </td>
+                        <td>
+                          <label for="rivision_p" class="select-block">
+                            <select name="daily_work_p" id="revision_p">
+                              <?php for($d=1; $d<=12; $d++){ echo '<option value="'.$d.'">'.$d. ' hour</option>'; } ?>
+                              <option value="unlimited">unlimited</option>
+                            </select>
+                            <!-- SVG ARROW -->
+                            <svg class="svg-arrow">
+                              <use xlink:href="#svg-arrow"></use>
+                            </svg>
+                            <!-- /SVG ARROW -->
+                          </label>
+                        
+                        </td>
+                        <td>
+                          <label for="price_filter" class="select-block">
+                            <select name="daily_work_s" id="price_filter">
+                              <?php for($d=1; $d<=12; $d++){ echo '<option value="'.$d.'">'.$d. ' hour</option>'; } ?>
+                              <option value="unlimited">unlimited</option>
+                            </select>
+                            <!-- SVG ARROW -->
+                            <svg class="svg-arrow">
+                              <use xlink:href="#svg-arrow"></use>
+                            </svg>
+                            <!-- /SVG ARROW -->
+                          </label>
+                        
+                        </td>
+                        <td>
+                          <label for="price_filter" class="select-block">
+                            <select name="daily_work_pm" id="price_filter">
+                              <?php for($d=1; $d<=12; $d++){ echo '<option value="'.$d.'">'.$d. ' hour</option>'; } ?>
+                              <option value="unlimited">unlimited</option>
+                            </select>
+                            <!-- SVG ARROW -->
+                            <svg class="svg-arrow">
+                              <use xlink:href="#svg-arrow"></use>
+                            </svg>
+                            <!-- /SVG ARROW -->
+                          </label>
+                        
+                        </td>
+                        </tr>
 											 
 									  	<?php 
 										if($gig_basic->gig_metadata){
@@ -612,7 +717,7 @@ float: right;
 									<div class="comment-giglt">
 										<div class="gigseditor">
 											
-												<textarea name="gig_dsc" maxlength="1200" required="required" class="ttinput-grouptddd" style="border:1px solid #ccc" id="textarea" placeholder="Enter text ...">{{$gig_basic->gig_dsc}}</textarea>
+												<textarea name="gig_dsc" maxlength="5000" required="required" class="ttinput-grouptddd" style="border:1px solid #ccc" id="textarea" placeholder="Enter text ...">{{$gig_basic->gig_dsc}}</textarea>
 												<div id="toolbar" style="display: none;">
 													<a class="bottomtt" data-wysihtml5-command="bold" title="CTRL+B"><img src="{{ asset('allscript')}}/e/1.png"></a>
 													<a class="bottomtt" data-wysihtml5-command="italic" title="CTRL+I"><img src="{{ asset('allscript')}}/e/2.png"></a></a>
@@ -852,25 +957,25 @@ float: right;
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="comment-list"><br>
-						<!-- COMMENT -->
-						<div class="comment-giglt">
-					<form action="{{url('/dashbord/create-gig/five')}}" method="post" enctype="multipart/form-data">
-							{{csrf_field()}}
- 
-   					 <input name="gig_image[]" type="file" />
-   					 <input name="gig_image[]" type="file" />
-   					 <input name="gig_image[]" type="file" />
+                      						<!-- COMMENT -->
+                      						<div class="comment-giglt">
+                      					<form action="{{url('/dashbord/create-gig/five')}}" method="post" enctype="multipart/form-data">
+                      							{{csrf_field()}}
+                       
+                         					 <input name="gig_image[]" type="file" />
+                         					 <input name="gig_image[]" type="file" />
+                         					 <input name="gig_image[]" type="file" />
 
 
-   					 
- 
+                         					 
+                       
 
-						</div>
-						<div class="comment-gigrt">
-						</div>			
+                      						</div>
+                      						<div class="comment-gigrt">
+                      						</div>			
 
-						<!-- /COMMENT REPLY -->
-					</div>
+                      						<!-- /COMMENT REPLY -->
+                      					</div>
                                 </div> 
                             </div> 
                         </div> 
@@ -886,7 +991,7 @@ float: right;
 		                            <small>Your information</small>
 		                       </button> 
 		                    </span>
-		           
+		           </form>
 		                    <span class="prev">
 		                        <button  class="btn" >Previous Step
 		                             <small>Your information</small>
@@ -900,6 +1005,8 @@ float: right;
 
         	 <div class="rms-content-box <?php if ($step == '6th'){ echo "rms-current-section"; } ?>">
                     <div class="rms-content-area">
+                    <form action="{{url('/dashbord/create-gig/finish')}}" method="post" >
+                      {{csrf_field()}}
                         <div class="rms-content-title">
                             <div class="leftside-title"><b> <i class="fa fa-file-text" aria-hidden="true"></i> Confirm</b> Details</div>
                             <div class="step-label">Step 4 - 4 </div> 
@@ -909,11 +1016,7 @@ float: right;
                                 <div class="col-md-12">
                                     <div class="comment-list"><br>
 							
-										<div class="comment-giglt">
-					
-
-						
-                                		</div> 
+										                
                             		</div> 
                         		</div> 
                     		</div>
@@ -928,7 +1031,7 @@ float: right;
 			                            <small>Your information</small>
 			                       </button> 
 			                    </span>
-			           
+			          </form>
 			                    <span class="prev">
 			                        <button  class="btn" >Previous Step
 			                             <small>Your information</small>
@@ -1147,10 +1250,26 @@ function delete_ques_ans(id){
 			success:function(data){
 				
 			}
-		
-		});
+	});
 				
-	}
+}
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 
 
     </script> 

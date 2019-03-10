@@ -3,6 +3,10 @@
 namespace App;
 use App\gig_home_category;
 use App\gig_subcategory;
+use App\filter;
+use App\gig_image;
+use App\gig_price;
+use App\user;
 use Illuminate\Database\Eloquent\Model;
 
 class gig_basic extends Model
@@ -26,6 +30,18 @@ class gig_basic extends Model
 
     public function get_subcategory(){
         return $this->belongsTo(gig_subcategory::class, 'gig_subcategory');
+    }
+
+     public function get_image(){
+        return $this->belongsTo(gig_image::class, 'gig_id', 'gig_id');
+    }
+
+     public function get_user(){
+        return $this->belongsTo(user::class, 'gig_user_id', 'id');
+    }
+
+    public function get_gig_price(){
+        return $this->belongsTo(gig_price::class, 'gig_id', 'gig_id');
     }
    
 }

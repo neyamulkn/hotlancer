@@ -13,7 +13,23 @@
 	<link rel="stylesheet" href="{{asset('/allscript')}}/css/custom.css">
 	<!-- favicon -->
 	<link rel="icon" href="favicon.ico">
-	<title>Account Setting</title>
+	<title>@yield('title')</title>
+
+	<style type="text/css">
+		.image_upload{
+			position: absolute;left:0; border-radius: 50%; background:rgba(255,255,255,.7); text-align: center; padding-top:40%; width: 100%; height: 100%; display: none;transition: 2s;
+		}
+
+		.user_imagess:hover .image_upload{
+				display: block;
+				position: absolute;left:0;
+				top: 0px;
+				transition: 2s;
+		}
+
+
+
+	</style>
 </head>
 <body>
 
@@ -30,14 +46,49 @@
 			<!-- USER QUICKVIEW -->
 			<div class="user-quickview">
 				<!-- USER AVATAR -->
-				<a href="author-profile.html">
-				<div class="outer-ring">
+				
+				<div class="outer-ring" data-toggle="modal" data-target="#user_imageModal">
 					<div class="inner-ring"></div>
+					<?php $id = Auth::user()->id; 
+						$user_image = DB::table('userinfos')->where('user_id', $id)->first();
+					?>
 					<figure class="user-avatar">
-						<img src="{{asset('/allscript')}}/images/avatars/avatar_01.jpg" alt="avatar">
+						<img  src="{{asset('/image/'.'/'.$user_image->user_image)}}" alt="avatar">
 					</figure>
+					<input type="file" id="user_image" name="user_image" style="display: none;">
 				</div>
-				</a>
+
+				<!--user image Modal -->
+				  <div class="modal fade" id="user_imageModal" role="dialog">
+				    <div class="modal-dialog">
+				    
+				      <!-- Modal content-->
+				      <div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Update image</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>	
+						</div>
+				        <form action="{{url('user/image/upload')}}" method="post" enctype="multipart/form-data"" id="form1" runat="server">
+				        <div class="modal-body">
+				         
+				         	{{csrf_field()}}
+				         		<label for="user_imagess" class="user_imagess"  style="position: relative; margin: 0px auto; width: 200px;height: 200px; background: #ccc;border-radius: 50%;">
+						        <input type='file' name="user_image" style="display: none;" id="user_imagess" onchange="readURL(this);" />
+						        <img id="blah" src="{{asset('/image/'.'/'.$user_image->user_image)}}" alt="" style=" width: 200px; height: 200px;border-radius: 50%;" />
+
+						        <span class="image_upload"><span style="font-size: 35px" class="sl-icon icon-camera"></span></span>
+						        </label>
+						   
+				        </div>
+				        <div class="modal-footer">
+				          <button type="submit" class="btn btn-default" >Update</button>
+				        </div>
+				         </form>
+				      </div>
+				      
+				    </div>
+				  </div>
+				
 				<!-- /USER AVATAR -->
 
 				<!-- USER INFORMATION -->
@@ -90,7 +141,7 @@
 		<!-- /SIDE MENU TITLE -->
 		<!-- DROPDOWN ITEM -->
 			<li class="dropdown-item">
-				<a href="dashboard-settings.html">
+				<a href="{{url('dashbord/profile/setting')}}">
                     <span class="sl-icon icon-settings"></span>
                     Account Settings
                 </a>
@@ -108,7 +159,7 @@
                 <!-- /PIN -->
 			</li>
 			<li class="dropdown-item">
-				<a href="dashboard-inbox.html">
+				<a href="{{url('dashbord/inbox/')}}">
                     <span class="sl-icon icon-envelope"></span>
                     Messages
                 </a>

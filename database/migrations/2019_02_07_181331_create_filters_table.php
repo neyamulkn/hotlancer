@@ -18,6 +18,7 @@ class CreateFiltersTable extends Migration
             $table->string('filter_name');
             $table->string('sub_category_id');
             $table->string('mete_tag');
+            $table->string('filter_msg');
             $table->timestamps();
         });
     }

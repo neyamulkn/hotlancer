@@ -190,3 +190,14 @@ td {
 	left: 35px;
 	font-size: 15px;
 }
+
+
+.paginations a, .paginations .page-link{
+display: block;
+padding: 6px 10px;
+color: #fff;
+}
+
+.outer-ring img{
+	border-radius: 50%; width: 45px; height: 45px;
+}

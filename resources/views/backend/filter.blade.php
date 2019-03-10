@@ -88,31 +88,19 @@
 				<div class="input-container">
 					<label for="Category" class="rl-label required">Meta tag </label>
 					<div class="col-md-4">
-                    <input type="checkbox" id="gig_metadata4" name="mete_tag" value="Yes">
-                    <label for="gig_metadata4">
-                        <span class="checkbox primary primary"></span>
-                       	Yes/No
-                    </label>
-                </div>
-
+	                    <input type="checkbox" id="gig_metadata4" name="mete_tag" value="Yes">
+	                    <label for="gig_metadata4">
+	                        <span class="checkbox primary primary"></span>
+	                       	Yes/No
+	                    </label>
+	                </div>
 				</div>
-
-
-	        	<div class="input-container">
-					<label for="status" class="rl-label required">Status</label>
-					<label for="status" class="select-block">
-						<select name="status" id="status">
-							<option value="1">Active</option>
-							<option value="2">Unactive</option>
-							
-						</select>
-						<!-- SVG ARROW -->
-						<svg class="svg-arrow">
-							<use xlink:href="#svg-arrow"></use>
-						</svg>
-						<!-- /SVG ARROW -->
-					</label>
-				</div>
+				<div class="input-container">
+					<div class="input-container">
+						<label class="rl-label">Filter Message</label>
+						<input name="filter_msg" type="text" id="" placeholder="Enter Filter Message.">
+					</div>
+	        	</div>
 
 	        <div class="modal-footer">
 	          <button type="reset" class="btn btn-sm btn-danger" data-dismiss="modal">Cancal</button>

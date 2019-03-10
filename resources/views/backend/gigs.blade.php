@@ -24,7 +24,7 @@
 		right: 0px;
 	}
    	#show_metadata{
-   		display: block;
+   		display: none;
    	}
    	/* style for skill level */
 .eo-button-box-radio{
@@ -172,28 +172,28 @@ font-weight: bold;
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-6">
-                                                <label class="rl-label filter_boreder">Category</label>
-                                                <div class="inpt-group dropdown-select-icon"> 
-                                                   
-								                    <select name="category_id" required="required" class="inpt-control select " id="category_id">
-														<option value="" disabled selected>Select Category</option>
-														<?php
-															$get_category = DB::table('gig_home_category')->get();
-															
-														 ?>
-														@foreach($get_category as $category)
-															<option value="{{$category->id}}">{{$category->category_name}}</option>
-														@endforeach
-													</select>
-                                                    <div class="form-tooltip">
-                                                        <span class="tooltip-title">Why do we need this info?</span>
-                                                       <p class="tooptip-content">Lorem Ipsum is simply dummy text of the printing and
-								    						typesetting industry. Lorem Ipsum has been the industry's
-								    						standard dummy text ever since the 1500s</p>
-                                                        <span class="tooltip-info">Your information is Safe here & never shared.</span>
-                                                   </div> 
-                                                </div> 
+                                     <div class="col-md-6">
+                                              <label class="rl-label filter_boreder">Category</label>
+                                                 <div class="inpt-group dropdown-select-icon"> 
+                                                                 
+              								                    <select name="category_id" required="required" class="inpt-control select " id="category_id">
+              														<option value="" disabled selected>Select Category</option>
+              														<?php
+              															$get_category = DB::table('gig_home_category')->get();
+              															
+              														 ?>
+              														@foreach($get_category as $category)
+              															<option value="{{$category->id}}">{{$category->category_name}}</option>
+              														@endforeach
+              													</select>
+                                              <div class="form-tooltip">
+                                                  <span class="tooltip-title">Why do we need this info?</span>
+                                                 <p class="tooptip-content">Lorem Ipsum is simply dummy text of the printing and
+              						typesetting industry. Lorem Ipsum has been the industry's
+              						standard dummy text ever since the 1500s</p>
+                                                  <span class="tooltip-info">Your information is Safe here & never shared.</span>
+                                             </div> 
+                                           </div> 
                                          </div>
                                          <div class="col-md-6"><br>
                                             <div class="inpt-group dropdown-select-icon"> 
@@ -201,7 +201,7 @@ font-weight: bold;
 
                                                        <option value="" disabled selected>Select category first</option>
 
-								                    </select> 
+								                                  </select> 
                                                     
                                                 </div> 
                                          </div>
@@ -211,86 +211,25 @@ font-weight: bold;
                                         <div class="col-md-12">
                                         	<div class="input-container" id="sub_category_filter">
 											
-												<ul class="filter_ul"  id="filter_ul__7">
-													<div class="row">
-														<div class="col-md-2">
-															<label class="rl-label filter_boreder">GIG METADATA</label>
-														</div>
-														<div class="col-md-10 ">
-                                                            <div id="metadata"></div>
-<!-- <div class="row">
+                  												<ul class="filter_ul"  id="filter_ul__7">
+                  													<div class="row">
+                  														<div class="col-md-2">
+                  															<label class="rl-label filter_boreder">GIG METADATA</label>
+                  														</div>
+                  														<div class="col-md-10 ">
+                                                 <div id="metadata"></div>
 
-<div class="col-md-6 ">
-<div class="tab">
-<p class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</p>
+                  														</div>
+                  													</div>		
+                  												</ul>
 
-</div>
-</div>
-
-<div class="col-md-6 ">
-fasdf   
-<div id="Paris" class="tabcontent">
-<p>Select the language you provide services for:</p>
-<h3>Paris</h3>
-<p>Paris is the capital of France.</p> 
-</div>
-</div>
- </div> -->
-<div class="tab">
-  <p class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">File Format</p>
-  <p class="tablinks" onclick="openCity(event, 'Paris')">Style</p>
-  <p class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</p>
-</div>
-
-<div id="London" class="tabcontent">
-
-  <p>Select the language you provide services for</p>
-  
-  <li>
-    <input type="checkbox" id="f" name="gig_metadata[]" value="f">
-        <label for="f">
-        <span class="checkbox primary primary"></span>
-            PNG
-        </label>
-    </li> 
-
-     <li>
-    <input type="checkbox" id="ff" name="gig_metadata[]" value="f">
-        <label for="ff">
-        <span class="checkbox primary primary"></span>
-            Photoshop
-        </label>
-    </li>
-     <li>
-    <input type="checkbox" id="sf" name="gig_metadata[]" value="f">
-        <label for="sf">
-        <span class="checkbox primary primary"></span>
-            AI
-        </label>
-    </li>
-</div>
-
-<div id="Paris" class="tabcontent">
-<p>Select the language you provide services for:</p>
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-														</div>
-													</div>		
-												</ul>
-
-											</div>
+                  											</div>
                                    		</div>
                                     </div>
 
 								<label class="rl-label filter_boreder">How would you want to pay?</label>
 														
-			                      <div class="row">
+			             <div class="row">
 
 											<label for="fixedid" class="col-md-6 labbel_box"  onclick="activeButton('fixed')">
 												<div class="p-lg-top-bottom ng-pristine ng-untouched ng-valid eo-button-box eo-button-box-radio ng-not-empty report_hidden <?php //if($userinfo->skill_level == 'Entry'){echo 'active';} ?>" id="fixed">
@@ -445,6 +384,7 @@ fasdf
                 data:{category_id:category_id, _token:_token},
                 success:function(data){
                 	if(data){
+
                     	$('#subcategory').html(data);
                     	
                     	//when change category meta field fresh 
@@ -461,6 +401,7 @@ fasdf
             }); 
         }else{
             $('#subcategory').html('<option value="">Select category first</option>');
+
         }
     });
 
@@ -483,12 +424,14 @@ $(document).ready(function(){
                     	$('#metadata').html(data);
                     }else{
                     	$('#metadata').html('');
-                    	$('#show_metadata').attr('style', 'display:none');
+                    	$('#show_metadata').remove();
                     }
                 }
             }); 
         }else{
             $('#metadata').html('<option value="">Select category first</option>');
+            $('#show_metadata').remove();
+            $('#show_metadata').attr('style', 'display:none');
         }
     });
 
@@ -525,8 +468,6 @@ $("select").on('change', function(e) {
              
         }
     }
-
-
 
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
